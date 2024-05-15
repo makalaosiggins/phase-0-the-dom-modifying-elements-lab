@@ -3,10 +3,40 @@
   <head>
     <title>Creating and Inserting DOM Elements</title>
   </head>
-  <script type="application/javascript">
-  </script>
   <body>
     <main id="main"></main>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript">
+      // Creating and appending elements programmatically
+      const element = document.createElement("div");
+      document.body.append(element);
+
+      const ul = document.createElement("ul");
+      for (let i = 0; i < 3; i++) {
+        const li = document.createElement("li");
+        li.textContent = (i + 1).toString();
+        ul.append(li);
+      }
+      element.append(ul);
+
+      // Adding elements to the DOM via innerHTML
+      const main = document.getElementById("main");
+      main.innerHTML =
+        "<h1>Poodles!</h1><h3>An Essay into the Pom-Pom as Aesthetic Reconfiguration of the Other from a post-Frankfurt School Appropriationist Perspective</h3><p><em>By: Byron Q. Poodle, Esq., BA.</em></p>";
+
+      // Changing properties on DOM nodes
+      element.style.height = "300px";
+      element.style.backgroundColor = "#27647B";
+      element.textContent = "You've changed what's on the screen!";
+      element.style.fontSize = "24px";
+      element.style.marginLeft = "30px";
+      element.style.lineHeight = "2";
+
+      // Adding or removing classes using className
+      element.className = "pet-listing dog";
+
+      // Adding or removing classes using classList
+      element.classList.remove("dog");
+      element.classList.add("cat", "sale");
+    </script>
   </body>
 </html>
